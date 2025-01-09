@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WoW on WoW Creation</title>
+    <link rel="icon" href="wow.png" type="image/gif" sizes="16x16">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .calculator {
+            max-width: 300px;
+            margin: 40px auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .calculator-screen {
+            width: 100%;
+            height: 50px;
+            padding: 10px;
+            font-size: 24px;
+            font-weight: bold;
+            text-align: right;
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .calculator-button {
+            width: 25%;
+            height: 50px;
+            padding: 10px;
+            font-size: 18px;
+            font-weight: bold;
+            border: none;
+            border-radius: 10px;
+            background-color: transparent; /* Make buttons transparent */
+            color: #333; /* Set text color */
+            cursor: pointer;
+        }
+        .calculator-button:hover {
+            background-color: rgba(0, 0, 0, 0.1); /* Add a slight background on hover */
+        }
+        body {
+            background-image: url('9579709.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <header style="position: fixed; background-color: black; padding: 10px 0; width: 100%; box-sizing: border-box;z-index: 1000;">
+        <div class="container-fluid" >
+            <div class="row">
+                <div class="col-md-8 col-9 pr-2 pl-5">
+                    <p class="text-white"> 
+                        <img class="icons" src="wow.png" style="width: 90px;"> 
+                        <span style="font-size: 18px; font-weight: bold;">WoW on WoW Creation</span> 
+                    </p>
+                </div>
+                <div class="col-md-4 col-3 my-auto">
+                    <nav class="navbar navbar-expand-lg">
+                        <div class="container-fluid">
+                            <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon" style="filter: invert(1);"></span>
+                            </button>
+                            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                                <ul class="navbar-nav">
+                                    <li class="nav-item">
+                                        <a class="nav-link active text-white" aria-current="page" href="#home-section">Home</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link text-white" href="#services">Services</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link text-white" href="#about">About</a>
+                                    </li>
+                                  
+                                </ul>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <div class="calculator">
+                    <input type="text" id="calculator-screen" class="calculator-screen" value="0" readonly>
+                    <div class="row">
+                        <button class="col-3 calculator-button" value="7">7</button>
+                        <button class="col-3 calculator-button" value="8">8</button>
+                        <button class="col-3 calculator-button" value="9">9</button>
+                        <button class="col-3 calculator-button" value="/">÷</button>
+                    </div>
+                    <div class="row">
+                        <button class="col-3 calculator-button" value="4">4</button>
+                        <button class="col-3 calculator-button" value="5">5</button>
+                        <button class="col-3 calculator-button" value="6">6</button>
+                        <button class="col-3 calculator-button" value="*">x</button>
+                    </div>
+                    <div class="row">
+                        <button class="col-3 calculator-button" value="1">1</button>
+                        <button class="col-3 calculator-button" value="2">2</button>
+                        <button class="col-3 calculator-button" value="3">3</button>
+                        <button class="col-3 calculator-button" value="-">−</button>
+                    </div>
+                    <div class="row">
+                        <button class="col-3 calculator-button" value="0">0</button>
+                        <button class="col-3 calculator-button" value=".">.</button>
+                        <button class="col-3 calculator-button" value="=">=</button>
+                        <button class="col-3 calculator-button" value="+">+</button>
+                    </div>
+                    <div class="row">
+                        <button class="col-12 calculator-button" value="C">C</button>
+                    </div>
+                </div>
+            
+                <!-- JavaScript -->
+                <script>
+                    const calculatorScreen = document.getElementById('calculator-screen');
+                    const calculatorButtons = document.querySelectorAll('.calculator-button');
+            
+                    let currentOperation = '';
+                    let previousOperation = '';
+            
+                    calculatorButtons.forEach(button => {
+                        button.addEventListener('click', () => {
+                            const value = button.value;
+            
+                            if (value === 'C') {
+                                currentOperation = '';
+                                calculatorScreen.value = '0';
+                            } else if (value === '=') {
+                                try {
+                                    const result = eval(currentOperation);
+                                    calculatorScreen.value = result;
+                                    previousOperation = currentOperation;
+                                    currentOperation = '';
+                                } catch (error) {
+                                    calculatorScreen.value = 'Error';
+                                }
+                            } else {
+                                if (currentOperation === '') {
+                                    currentOperation = value;
+                                } else {
+                                    currentOperation += value;
+                                }
+                                calculatorScreen.value = currentOperation;
+                            }
+                        });
+                    });
+                </script>
+                
+            </div>
+        </div>
+
+    </div>
+
+    
+   
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+    
+</body>
+</html>

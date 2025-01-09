@@ -1,0 +1,424 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>WoW on WoW </title>
+  <link rel="icon" href="wow.png" type="image/gif" sizes="16x16">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+</head>
+
+<body style="background-color: black;">
+  <style>
+    header {
+        margin-top: -13px;
+        position: fixed;
+        background-color: black;
+        padding: 10px 0;
+        width: 100%;
+        box-sizing: border-box;
+        z-index: 1000;
+        height: 101px;
+    }
+    .navbar-nav {
+        background-color: black; 
+        border: 2px solid black;
+    }
+    .navbar-toggler-icon {
+        filter: invert(1);
+    }
+    .icons {
+        width: 90px;
+    }
+    .nav-link {
+        color: white !important;
+    }
+    .nav-link:hover {
+        text-decoration: underline;
+    }
+</style>
+</head>
+<body>
+
+  <header>
+    <div class="container-fluid">
+        <div class="row align-items-center">
+            <div class="col-md-8 col-9 pr-2 pl-5">
+                <p class="text-white mb-0">
+                    <img class="icons" src="wow.png" alt="WoW Logo">
+                    <span style="font-size: 18px; font-weight: bold;">WoW on WoW </span>
+                </p>
+            </div>
+            <div class="col-md-4 col-3">
+                <nav class="navbar navbar-expand-lg">
+                    <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link" href="Home.html">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="Home.html#services">Services</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="Home.html#abouts">About</a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+<!-- Bootstrap JS and Popper.js -->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+
+
+  <br class="bg-grey">
+  <section class="pt-4 bg-black info-item d-flex" data-aos="fade-up" data-aos-delay="50" id="home-section">
+    <div class="container-fluid info-item d-flex" data-aos="fade-up" data-aos-delay="400">
+      <div class="row align-items-center">
+        <div class="col-lg-4 col-md-12 mb-4 mb-lg-0">
+          <video autoplay muted class="rounded-circle w-100" style="margin-top: 29px;" poster="wow.png">
+            <source src="TM.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="col-lg-8 col-md-12">
+          <div class="container" data-aos="fade-up" data-aos-delay="100">
+            <h4 id="greeting" style="color: white; margin-top: 105px; position: relative; z-index: 1;"></h4>
+            <h4 style="color: white; margin-top: 20px;">
+              <span class="typed" id="typed" style="color: white; z-index: 1;"></span>
+              <span class="typed-cursor typed-cursor--blink" aria-hidden="true" style="color: white;">|</span>
+            </h4>
+          </div>
+          <script>
+            const name = localStorage.getItem('name');
+            const greeting = document.getElementById('greeting');
+            greeting.innerHTML = 'Hello, ' + name + '!✨';
+          </script>
+          <script>
+            // Initialize AOS
+            AOS.init();
+
+            // Write text with typing effect
+            var text = 'WoW on WoW leads the way in robotics innovation, providing groundbreaking ideas. Additionally, we offer Render Motivation, your ultimate source for inspiration across various topics.';
+            var typed = document.getElementById('typed');
+            var cursor = document.querySelector('.typed-cursor');
+            var i = 0;
+
+            // Show the cursor at the beginning
+            cursor.style.display = 'inline';
+
+            var timer = setInterval(function () {
+              if (i < text.length) {
+                typed.textContent += text[i];
+                i++;
+              } else {
+                clearInterval(timer);
+                cursor.style.display = 'none'; // Hide cursor after typing is done
+              }
+            }, 50);
+          </script>
+          <br><br>
+          <h5 style="color: white;">“Creativity is the superpower that allows us to achieve what others deem
+            impossible.”</h5>
+          <footer style="color: white;">-Noyal Rins</footer>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-black p-5 info-item d-flex" data-aos="fade-up" data-aos-delay="50" id="services">
+    <div class="container bg-black">
+      <h1 style="color: white;" class="text-center info-item d-flex" data-aos="fade-up" data-aos-delay="50">
+        <br><br>Click to Access our Services<br><br>
+      </h1>
+      <div class="row mt-4 justify-content-center info-item d-flex" data-aos="fade-up" data-aos-delay="50">
+        <div class="col-md-4 col-sm-6 col-12 mb-4">
+          <a style="text-decoration: none;" href="Ignite ideas.html" class="card h-100 info-item d-flex" data-aos="fade-up"
+            data-aos-delay="50">
+            <div class="card" style="border: 1px solid white; border-radius: 10px; background-color: black;">
+              <img style="width: 100%; height: 250px; object-fit: contain; border-radius: 10px 10px 0 0;"
+                src="Designer (20).png" class="card-img-top" alt="...">
+
+
+              <div class="card-body">
+                <p style="color: white;" class="card-text align-items-center">Ignite new ideas✨✨</p>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="col-md-4 col-sm-6 col-12 mb-4">
+          <a style="text-decoration: none;" href="Official-projects.html" class="card h-100 info-item d-flex" data-aos="fade-up"
+            data-aos-delay="50">
+            <div class="card" style="border: 1px solid white; border-radius: 10px; background-color: black;">
+              <img style="width: 100%; height: 250px; object-fit: contain; border-radius: 10px 10px 0 0;" src="wow.png"
+                class="card-img-top" alt="...">
+
+
+              <div class="card-body">
+                <p style="color: white;" class="card-text align-items-center">Official-projects.html</p>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="col-md-4 col-sm-6 col-12 mb-4">
+          <a style="text-decoration: none;" href="Render motivation.html" class="card h-100 info-item d-flex" data-aos="fade-up"
+            data-aos-delay="50">
+            <div class="card bg-black" style="border: 1px solid white; border-radius: 10px; background-color: black;">
+              <img style="width: 100%; height: 250px; object-fit: contain; border-radius: 10px 10px 0 0;"
+                src="Motivation.png" class="card-img-top" alt="...">
+
+
+              <div class="card-body">
+                <p style="color: white;" class="card-text align-items-center">Render Motivation
+                </p>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="bg-black p-5" id="abouts">
+    <div class="container bg-black info-item d-flex" data-aos="fade-up" data-aos-delay="50">
+      <div class="row align-items-start">
+        <h1 style="color: white;" class="text-center w-100">About us</h1>
+        <br>
+        <div style=" border-radius: 30" class="col-lg-6 col-md-12 mb-4 mb-lg-0 info-item d-flex" data-aos="fade-up"
+          data-aos-delay="50"">
+          <br>
+          <img class=" img-fluid" style=" padding-top: 42px; border-radius: 30;" src="9027297.jpg" alt="">
+        </div>
+        <div
+          class="col-lg-6 col-md-12 text-lg-start text-center d-flex flex-column justify-content-between info-item d-flex"
+          data-aos="fade-up" data-aos-delay="50">
+          <br>
+          <h3 style="padding-top: 17px;" class="text-white">Welcome to our family! As a small startup, we’re committed
+            to crafting world-class products. Despite our youth, we harbor significant ambitions—we’re on track to
+            become a major company in the future. We embody the future, and the time for action is now. Here’s to the
+            dreamers, doers, builders, movers, and shakers who will shape the world and make it a better place to live.
+          </h3>
+          <p class="text-white">Regards,<br>the CEO and founder,<br>WoW on WoW </p>
+        </div>
+        <br>
+        <div class="col-12 md-12 lg-12 color-black info-item d-flex" data-aos="fade-up" data-aos-delay="50">
+          <audio id="anthem" src="WoW on WoW (1).mp3" type="audio/mp3"></audio>
+          <br>
+          <button class="bg-black w-100 rounded" style=" color: white;  width: 634px; border-color: white;"
+            type="button" aria-label="Play or pause the anthem" class="audio-control-button" onclick="playPauseAudio()">
+            Click to play/pause our Anthem
+          </button>
+        </div>
+
+        <style>
+          .audio-control-button {
+            background-color: black;
+            border-color: grey;
+            border-radius: 10px;
+            color: white;
+            padding: 10px 20px;
+            /* Added padding for better button appearance */
+            cursor: pointer;
+            /* Change cursor to pointer */
+          }
+
+          .audio-control-button:hover {
+            background-color: grey;
+            /* Change color on hover for better UX */
+          }
+        </style>
+
+        <script>
+          function playPauseAudio() {
+            var audio = document.getElementById('anthem');
+            if (audio.paused) {
+              audio.play().catch(function (error) {
+                console.log("Error playing audio:", error);
+              });
+            } else {
+              audio.pause();
+            }
+          }
+        </script>
+
+        <script>
+          // Define the function playPauseAudio
+          var audio = document.getElementById('anthem');
+          var isPlaying = false;
+
+          function playPauseAudio() {
+            if (isPlaying) {
+              audio.pause();
+              isPlaying = false;
+              document.querySelector('button').innerText = 'Click to play anthem';
+            } else {
+              audio.play();
+              isPlaying = true;
+              document.querySelector('button').innerText = 'Click to pause anthem';
+            }
+          }
+        </script>
+      </div>
+    </div>
+  </section>
+  <section>
+    <div class="container info-item d-flex" data-aos="fade-up" data-aos-delay="50">
+      <div class="row">
+        <div class="col-md-12">
+          <h1 style="color: white;" class="align-items-center text-center">Click to get our support💬</h1>
+          <br>
+          <br>
+          <a href="Support.html"> <img class="img-fluid info-item d-flex" data-aos="fade-up" data-aos-delay="50"
+              style="border-radius: 20px; width: 1294px; height: 586px;"
+              src="2201.i101.011.S.m004.c13.fp IT technical support isometric.jpg" alt=""></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section id="contact" class="contact section p-4">
+
+    <!-- Section Title -->
+    <div class="container section-title" data-aos="fade-up">
+      <h1 style="color: white;">Contact</h1>
+      <p style="color: white;">Get in touch with us</p>
+    </div><!-- End Section Title -->
+
+    <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+      <div class="row gy-4">
+
+        <div class="col-lg-5">
+
+          <div class="info-wrap">
+
+            <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="200">
+              <i class="bi bi-geo-alt flex-shrink-0"></i>
+              <div>
+                <h3 style="color: white;">From India</h3>
+                <p style="color: white;">to the world</p>
+              </div>
+            </div><!-- End Info Item -->
+
+            <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="400">
+              <i class="bi bi-envelope flex-shrink-0"></i>
+              <div>
+                <h3 style="color: white;">Email Us</h3>
+                <p style="color: white;">WoWonWoWCreation@gmail.com</p>
+                <br>
+              </div>
+            </div><!-- End Info Item -->
+
+          </div>
+          <iframe class="img-fluid"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d239129.20164542197!2d77.46612614452614!3d12.953945614144494!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae1670c9b44e6d%3A0xf8dfc3e8517e4fe0!2sBengaluru%2C%20Karnataka!5e1!3m2!1sen!2sin!4v1726557133230!5m2!1sen!2sin"
+            width="600" height="284" style="border-radius: 10px; height: 284px;"></iframe>
+
+        </div>
+
+        <div class="col-lg-7 info-item d-flex" data-aos="fade-up" data-aos-delay="50">
+
+          <form action="https://formspree.io/f/xgvezqqp" method="POST" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
+        
+            <div class="row gy-4">
+        
+              <div class="col-md-12">
+                <label for="name-field" class="form-label" style="color: white;">Your Name</label>
+                <input type="text" name="name" id="name-field" class="form-control" required>
+              </div>
+        
+              <div class="col-md-6">
+                <label for="email-field" class="form-label" style="color: white;">Your Email</label>
+                <input type="email" class="form-control" name="email" id="email-field" required>
+              </div>
+        
+              <div class="col-md-6">
+                <label for="subject-field" class="form-label" style="color: white;">Subject</label>
+                <input type="text" class="form-control" name="subject" id="subject-field" required>
+              </div>
+        
+              <div class="col-md-12">
+                <label for="message-field" class="form-label" style="color: white;">Message</label>
+                <textarea class="form-control" name="message" rows="10" id="message-field" required></textarea>
+              </div>
+        
+            </div>
+            <br>
+        
+            <div class="col-md-12">
+              <button type="submit" style="color: white; background-color: blue; border-radius: 9px; padding: 10px 20px;">Send Message</button>
+            </div>
+        
+          </form>
+        
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <footer class="bg-grey d-flex flex-column justify-content-center align-items-center" style="height: auto; width: 100%; background-color: grey; padding: 20px 0;">
+    <div class="container">
+        <div class="row" style="width: 100%; margin: 0;">
+            <div class="col-md-12 text-center mb-3">
+                <a href="https://www.facebook.com/profile.php?id=61562382295816" class="fa-brands fa-facebook" aria-label="Facebook" style="text-decoration: none; margin: 0 10px; font-size: 24px; color: black; transition: color 0.3s;"></a>
+                <a href="https://www.instagram.com/" class="fa-brands fa-instagram" aria-label="Instagram" style="text-decoration: none; margin: 0 10px; font-size: 24px; color: black; transition: color 0.3s;"></a>
+                <a href="https://www.youtube.com/@WoWatyoutube" class="fa-brands fa-youtube" aria-label="YouTube" style="text-decoration: none; margin: 0 10px; font-size: 24px; color: black; transition: color 0.3s;"></a>
+            </div>
+            <div class="col-md-12 text-center mb-3">
+                <p style="text-align: center; margin: 0;">Some images on this website were created by Freepik.</p>
+            </div>
+            <div class="col-md-12 text-center">
+                <p class="text-black" style="line-height: 1.5; margin: 0;">Copyright WoW on WoW  &copy; 2024. All rights reserved.</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<style>
+    .fa-brands {
+        transition: color 0.3s;
+    }
+
+    .fa-brands:hover {
+        color: #007bff; /* Change to your desired hover color */
+    }
+
+    .bg-grey {
+        background-color: grey;
+    }
+</style>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+    integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>

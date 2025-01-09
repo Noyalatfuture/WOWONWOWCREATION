@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support Chat</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <style>
+        body,
+        html {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .support-chat {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('modern-background-with-lines.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .chat-header {
+            background-color: black;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            display: flex;
+            align-items: center;
+        }
+
+        .profile-picture {
+            width: 80px;
+            height: 80px;
+ border-radius: 50%;
+            margin: 10px;
+        }
+
+        .chat-container {
+            flex-grow: 1;
+            overflow-y: auto;
+            padding: 10px;
+            padding-top: 120px; /* Added padding to avoid hiding under the header */
+        }
+
+        .chat-messages {
+            padding: 10px;
+            min-height: 100vh;
+            color: white;
+        }
+
+        .chat-input {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 10px;
+            background-color: black;
+        }
+
+        .query-btn {
+            margin: 5px;
+            padding: 10px 20px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .query-btn:hover {
+            background-color: #555;
+        }
+
+        .message {
+            margin: 10px 0;
+            padding: 5px;
+            border-radius: 5px;
+        }
+
+        .user-message {
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+        }
+
+        .bot-message {
+            background-color: rgba(0, 123, 255, 0.1);
+            color: white;
+        }
+
+        .timestamp {
+            font-size: 0.8em;
+            color: #bbb;
+        }
+
+        .custom-input {
+            flex-grow: 1;
+            margin-right: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <header style="margin-top: -24px; position: fixed; background-color: black; padding: 10px 0; width: 100%; box-sizing: border-box; z-index: 1000; height:108px">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-8 col-9 pr-2 pl-5">
+                    <p class="text-white">
+                        <img class="icons" src="wow.png" style="width: 90px;margin-top: 8px;">
+                        <span style="font-size: 18px; font-weight: bold;">WoW on WoW</span>
+                    </p>
+                </div>
+                <div class="col-md-4 col-3 my-auto">
+                    <nav class="navbar navbar-expand-lg">
+                        <div class="container-fluid">
+                            <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown"
+                                aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon" style="filter: invert(1);"></span>
+                            </button>
+                            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                                <ul class="navbar-nav" style="background-color: black; border: 2px solid black;">
+                                    <li class="nav-item">
+                                        <a class="nav-link text-white" href="Home.html">Home</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link text-white" href="Home.html#services">Services</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link text-white" href="Home.html#abouts">About</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="support-chat">
+        <div class="chat-container">
+            <div class="chat-messages">
+                <!-- Messages will be displayed here -->
+            </div>
+        </div>
+        <div class="chat-input">
+            <button class="query-btn" onclick="showAnswer('Hello')">Hello</button>
+            <button class="query-btn" onclick="showAnswer('What is your purpose?')">What is your purpose?</button>
+            <button class="query-btn" onclick="showAnswer('What services do you provide?')">What services do you
+                provide?</button>
+            <button class="query-btn" onclick="showAnswer('How to access services?')">How to access services?</button>
+            <button class="query-btn" onclick="showAnswer('Need more help?')">Need more help?</button>
+            <button class="query-btn" onclick="showAnswer('Thank you')">Thanks for help</button>
+           
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim .min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script>
+        const chatMessages = document.querySelector('.chat-messages');
+
+        const questionsAndAnswers = {
+            'Hello': 'Hello! How can I assist you today?',
+            'What is your purpose?': 'I am here to provide basic support for your website.',
+            'What services do you provide?': 'We offer "Ignite Ideas" for idea generation, "Official-projects.html" for project viewing, and "Render Motivation" to keep you inspired.',
+            'How to access services?': 'You can access our services by selecting "Services" in the navigation bar, or by scrolling down on the home page and clicking on any service.',
+            'Need more help?': 'Email wowonwowcreation@gmail.com for assistance.',
+            'Thank you': 'It was nice having time with you, thank you!',
+        };
+
+        function showAnswer(question) {
+            const answer = questionsAndAnswers[question];
+            const timestamp = new Date().toLocaleTimeString();
+            chatMessages.innerHTML += `
+                <div class="message user-message"><strong>You:</strong> ${question} <span class="timestamp">${timestamp}</span></div>
+                <div class="message bot-message"><strong>WoWbot:</strong> ${answer} <span class="timestamp">${timestamp}</span></div>
+            `;
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        function sendCustomMessage() {
+            const userInput = document.getElementById('user-input');
+            const question = userInput.value.trim();
+            if (question) {
+                showAnswer(question);
+                userInput.value = '';
+            }
+        }
+    </script>
+</body>
+
+</html>

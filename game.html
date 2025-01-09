@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Tic Tac Toe</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+	<style>
+		/* Add some basic styling to make the game look better */
+		body {
+			font-family: Arial, sans-serif;
+			background-color: #f0f0f0;
+			margin: 20px;
+		}
+		.board {
+			display: grid;
+			grid-template-columns: repeat(3, 100px);
+			grid-gap: 10px;
+			background-color: #fff;
+			padding: 10px;
+			border: 1px solid #ddd;
+			border-radius: 10px;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+		}
+		.cell {
+			width: 100px;
+			height: 100px;
+			background-color: #f7f7f7;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			font-size: 36px;
+			cursor: pointer;
+			border: 1px solid #ddd;
+			border-radius: 10px;
+			transition: background-color 0.2s ease;
+		}
+		.cell:hover {
+			background-color: #e7e7e7;
+		}
+		.cell:active {
+			background-color: #ccc;
+		}
+		.reset-button {
+			background-color: #4CAF50;
+			color: #fff;
+			padding: 10px 20px;
+			border: none;
+			border-radius: 10px;
+			cursor: pointer;
+			margin-top: 20px;
+		}
+		.reset-button:hover {
+			background-color: #3e8e41;
+		}
+        .container {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			height: 100vh;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12 text-center">
+				<h1>Tic Tac Toe</h1>
+				<div class="board">
+					<div class="cell" id="cell-0"></div>
+					<div class="cell" id="cell-1"></div>
+					<div class="cell" id="cell-2"></div>
+					<div class="cell" id="cell-3"></div>
+					<div class="cell" id="cell-4"></div>
+					<div class="cell" id="cell-5"></div>
+					<div class="cell" id="cell-6"></div>
+					<div class="cell" id="cell-7"></div>
+					<div class="cell" id="cell-8"></div>
+				</div>
+				<button class="reset-button">Reset</button>
+			</div>
+		</div>
+	</div>
+	<script>
+		// Get all the cell elements
+		const cells = document.querySelectorAll('.cell');
+		const resetButton = document.querySelector('.reset-button');
+		
+		// Initialize the game state
+		let gameState = ['', '', '', '', '', '', '', '', ''];
+		let currentPlayer = 'X';
+		
+		// Add event listeners to each cell
+		cells.forEach((cell, index) => {
+			cell.addEventListener('click', () => {
+				// If the cell is empty, make a move
+				if (gameState[index] === '') {
+					gameState[index] = currentPlayer;
+					cell.innerText = currentPlayer;
+					
+					// Check for a win or tie
+					checkForWin();
+					
+					// Switch players
+					currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
+				}
+			});
+		});
+		
+		// Add event listener to the reset button
+		resetButton.addEventListener('click', () => {
+			gameState = ['', '', '', '', '', '', '', '', ''];
+			currentPlayer = 'X';
+			cells.forEach(cell => cell.innerText = '');
+		});
+		
+		// Check for a win or tie
+		function checkForWin() {
+			const winConditions = [
+				[0, 1, 2],
+				[3, 4, 5],
+				[6, 7, 8],
+				[0, 3, 6],
+				[1, 4, 7],
+				[2, 5, 8],
+				[0, 4, 8],
+				[2, 4, 6]
+			];
+			
+            for (let i = 0; i < winConditions.length; i++) {
+const [a, b, c] = winConditions[i];
+if (gameState[a] && gameState[a] === gameState[b] && gameState[a] === gameState[c]) {
+alert(`Player ${gameState[a]} wins!`);
+return;
+}
+}
+
+// Check for a tie
+if (!gameState.includes('')) {
+alert('It\'s a tie!');
+}
+}
+</script>
+</body>
+</html> 
